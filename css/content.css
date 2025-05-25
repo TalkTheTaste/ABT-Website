@@ -154,6 +154,7 @@
 	.hero-title span {
 		display:block;
 		opacity:0;
+		/* color: #c9bc49; */
 	}	
 	
 	.hero-subtitle {
@@ -243,7 +244,7 @@
 		position:relative;
 		display:block;
 		font-weight: 600; 
-		font-size: calc((1rem + 12vw) / 2);
+		font-size: calc((1rem + 9vw) / 2);
   		line-height: calc((1rem + 14vw) / 2);
 		letter-spacing: -0.2vw;
 	}
@@ -284,6 +285,9 @@
 		align-items: center;
 		pointer-events:initial;
 		cursor:pointer;
+		/* margin-left: 10rem; */
+		/* font-size: 0.5px; */
+		/* color: #c9bc49 */
 	}
 	
 	.show-loader .hero-title-placeholder div, .hero-title-placeholder.disable div {

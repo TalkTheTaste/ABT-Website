@@ -3280,7 +3280,7 @@
 		transform: scale(0.7) translateY(0%);
 		transform-origin: center center;
 		margin:0 auto;
-		filter:grayscale(1);	
+		/* filter:grayscale(1);	 */
 	}
 	
 	.clipped-image img {

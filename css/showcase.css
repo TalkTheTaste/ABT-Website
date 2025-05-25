@@ -259,7 +259,7 @@
 	
 	.cp-button-prev.button-icon-link:hover .button-icon, .cp-button-next.button-icon-link:hover .button-icon {
 		border: 2px solid currentColor;
-		background-color: currentColor;
+		background-color: red;
 		height: 36px;
 		line-height: 36px;
 		width: 36px;		

@@ -89,7 +89,8 @@
 		font-size:100%
 	}
 	.flexnav .touch-button:hover,.menu-button{
-		cursor:pointer
+		cursor:pointer;
+		color: red
 	}
 	.flexnav{
 		-webkit-transition:none;
