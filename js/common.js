@@ -1491,7 +1491,7 @@ Function Scroll Effects
 						if (index === 0) {
 							// Primul element are clasa 'secondary-font' și opacitatea 1
 							gsap.set(list, {
-								className: 'secondary-font',
+								// className: 'secondary-font',
 								opacity: 1
 							});
 						} else {

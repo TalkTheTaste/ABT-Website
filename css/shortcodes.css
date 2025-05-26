@@ -3858,10 +3858,19 @@ input[type="submit"] {
 }
 
 .pinned-lists li.secondary-font {
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif; */
   font-style: normal;
   font-weight: 400;
   font-size: calc(1rem + 4.3vw);
+  color: #00008c;
+}
+
+.pinned-lists li.secondary-font:nth-child(odd) {
+  color: #00008c;
+}
+
+.pinned-lists li.secondary-font:nth-child(even) {
+  color: #b33227;
 }
 
 /*--------------------------------------------------
