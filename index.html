@@ -87,6 +87,43 @@
       rel="stylesheet"
     />
   </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const totalImages = 86;
+
+      // Generate all image paths
+      const imagePaths = Array.from({ length: totalImages }, (_, i) => {
+        const num = String(i + 1).padStart(2, "0");
+        return `images/shortcodes/image${num}.jpg`;
+      });
+
+      // Function to shuffle array
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      // Function to update images
+      function updateImages() {
+        shuffle(imagePaths);
+        const selected = imagePaths.slice(0, 4);
+        const heroImgs = document.querySelectorAll("#hero-interaction img");
+        heroImgs.forEach((img, idx) => {
+          if (selected[idx]) {
+            img.src = selected[idx];
+          }
+        });
+      }
+
+      // Initial load
+      updateImages();
+
+      // Update every 10 seconds (10000 ms)
+      setInterval(updateImages, 10000);
+    });
+  </script>
 
   <body
     class="hidden hidden-ball smooth-scroll rounded-borders hero-below-caption"
@@ -180,9 +217,19 @@
                       <a
                         class="ajax-link"
                         data-type="page-transition"
-                        href="index-playground.html"
+                        href="images.html"
                         ><div class="before-span">
                           <span data-hover="Images">Images</span>
+                        </div></a
+                      >
+                    </li>
+                    <li class="menu-timeline link">
+                      <a
+                        class="ajax-link"
+                        data-type="page-transition"
+                        href="contact.html"
+                        ><div class="before-span">
+                          <span data-hover="Contact">Contact</span>
                         </div></a
                       >
                     </li>
@@ -193,9 +240,9 @@
 
               <!-- Header Button -->
               <a
-                class="header-button ajax-link"
-                data-type="page-transition"
-                href="contact.html"
+                class="header-button"
+                href="http://wa.me/+971529972969"
+                target="_blank"
               >
                 <div class="button-icon-link right">
                   <div class="icon-wrap-scale">
@@ -206,7 +253,9 @@
                     </div>
                   </div>
                   <div class="button-text sticky right">
-                    <span data-hover="Let's Talk">Let's Talk</span>
+                    <span data-hover="Let's Talk"
+                      ><i class="fa-brands fa-whatsapp"></i> WhatsApp</span
+                    >
                   </div>
                 </div>
               </a>
@@ -325,7 +374,10 @@
                             <div class="hero-title-placeholder"></div>
                             <span>
                               <span class="text-rotator-wrapper">
-                                <span class="text-rotator" style="color: #00008c">
+                                <span
+                                  class="text-rotator"
+                                  style="color: #00008c"
+                                >
                                   <span>Dedicated</span>
                                   <span style="color: #b33227">Trusted</span>
                                   <span>Innovative</span>
