@@ -32,7 +32,70 @@ Function CustomFunction
   function CustomFunction() {
     //Add here your custom js code
   } // End CustomFunction
+  function CustomFunction2() {
+    const container = document.querySelector("#itemsWrapper");
+    const totalImages = 86;
 
+    // Generate and shuffle image paths
+    const imagePaths = Array.from({ length: totalImages }, (_, i) => {
+      const num = (i + 1).toString().padStart(2, "0");
+      return `images/shortcodes/image${num}.jpg`;
+    });
+
+    // Shuffle using Fisher–Yates
+    for (let i = imagePaths.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [imagePaths[i], imagePaths[j]] = [imagePaths[j], imagePaths[i]];
+    }
+
+    let imageIndex = 0;
+
+    while (imageIndex < imagePaths.length) {
+      const layout = Math.random() > 0.5 ? "two" : "three";
+      const itemsInRow = layout === "two" ? 2 : 3;
+      const delays = layout === "two" ? [100, 200] : [100, 200, 300];
+
+      const row = document.createElement("div");
+      row.className = "content-row full light-section text-align-center";
+      row.style.marginBottom = "30px";
+
+      for (let i = 0; i < itemsInRow && imageIndex < imagePaths.length; i++) {
+        const div = document.createElement("div");
+        div.className = layout === "two" ? "one_half" : "one_third";
+        if (i === itemsInRow - 1) div.classList.add("last");
+
+        const figure = document.createElement("figure");
+        figure.className = "has-animation has-cover";
+        figure.setAttribute("data-delay", `${delays[i]}`);
+
+        const link = document.createElement("a");
+        link.href = imagePaths[imageIndex];
+        link.className = "image-link";
+
+        const img = document.createElement("img");
+        img.src = imagePaths[imageIndex];
+        img.alt = "Image Title";
+
+        const caption = document.createElement("figcaption");
+        caption.textContent = "Image Caption Here";
+
+        link.appendChild(img);
+        figure.appendChild(link);
+        // figure.appendChild(caption
+        // );
+        div.appendChild(figure);
+        row.appendChild(div);
+
+        imageIndex++;
+      }
+
+      const hr = document.createElement("hr");
+      hr.style.margin = "20px auto";
+
+      container.appendChild(row);
+      container.appendChild(hr);
+    }
+  } // End CustomFunction
 
   /*--------------------------------------------------
 Function Shuffle Elements Function

@@ -177,10 +177,7 @@
                       >
                     </li>
                     <li class="menu-timeline link">
-                      <a
-                        class="ajax-link"
-                        data-type="page-transition"
-                        href="images.html"
+                      <a class="ajax-link" href="images.html"
                         ><div class="before-span">
                           <span data-hover="Gallery">Gallery</span>
                         </div></a
@@ -651,13 +648,18 @@
                     <a
                       class="link"
                       target="_blank"
-                      href="https://www.clapat.com/"
+                      href="https://www.albesharaengineering.com/"
                       >ABT</a
-                    >. All rights reserved.
+                    >. All rights reserved. <br /><a
+                      class="link"
+                      target="_blank"
+                      href="https://www.talkthetaste.com/"
+                      >Built by TTT</a
+                    >
                   </div>
                 </div>
 
-                <div class="socials-wrap">
+                <!-- <div class="socials-wrap">
                   <div class="socials-icon">
                     <i class="fa-solid fa-share-nodes"></i>
                   </div>
@@ -713,7 +715,7 @@
                       >
                     </li>
                   </ul>
-                </div>
+                </div> -->
               </div>
             </footer>
             <!--/Footer -->
@@ -753,6 +755,10 @@
 
     <script src="js/common.js"></script>
     <script src="js/contact.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js">
+      document.addEventListener("DOMContentLoaded", function () {
+            sessionStorage.removeItem("hasRefreshed");
+          });
+    </script>
   </body>
 </html>
